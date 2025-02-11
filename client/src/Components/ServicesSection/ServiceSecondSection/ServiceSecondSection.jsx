@@ -4,7 +4,7 @@ const ServiceSecondSection = () => {
     const items = Array(5).fill("Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
 
     return (
-      <div className="flex mt-12 mb-4 justify-center items-center min-h-screen bg-black text-white relative">
+      <div className="flex  mb-4 justify-center items-center min-h-screen bg-black text-white relative">
         {/* Central Circle */}
 
         <img src={logodesign} className="w-60 " alt="logo..png" />

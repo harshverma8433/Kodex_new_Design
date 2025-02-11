@@ -1,7 +1,7 @@
 import "./TrainingOffer.css";
 const TrainingOffer = () => {
   return (
-    <div className="mt-24 ">
+    <div className="mt-96 ">
       <p className="text-white pb-16 text-font text-2xl tracking-wider">
         Trainings we offer
       </p>

@@ -57,23 +57,24 @@ const Training = () => {
 
 
   return (
-    <div  className=" h-[700px]" >
+    <div  className=" h-[450px]  " >
 
-      <div>
+      <div className=" ">
 
        
 
-        <div ref={ref} className="mt-20">
+        <div ref={ref} className="mt-20  ">
           <motion.h1
-            className="text-white text-center pb-[3%] text-3xl font-mono tracking-wider"
+            className="text-[#CF9274] text-center pb-[3%] text-3xl  font-semibold tracking-wider"
             initial={{ opacity: 0, y: -30 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
             transition={{ duration: 0.6 }}
           >
             TRAININGS
           </motion.h1>
-          <Carousel
-            className="caro"
+         <div className="">
+         <Carousel
+            className="caro "
             responsive={responsive}
             infinite
             autoPlay
@@ -83,7 +84,7 @@ const Training = () => {
             {Training.map((service, index) => (
               <motion.div
                 key={index}
-                className="rounded-2xl w-[97%] flex justify-center items-end text-center slidr cursor-pointer"
+                className="rounded-2xl w-[80%] ml-10 flex justify-center items-end text-center slidr cursor-pointer"
                 id="grad1"
                 style={{ height: "300px" }}
                 initial="hidden"
@@ -97,12 +98,12 @@ const Training = () => {
               </motion.div>
             ))}
           </Carousel>
+         </div>
         </div>
 
-        <TrainingOffer/>
       </div>
 
-      <div className="bg-grad-homepage relative right-80   bottom-32 "></div>
+      {/* <div className="bg-grad-homepage relative right-80   bottom-32 "></div> */}
     </div>
   )
 }

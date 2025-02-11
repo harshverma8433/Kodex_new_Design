@@ -42,7 +42,7 @@ const FormPage = () => {
   };
 
   return (
-    <div className="form-container  mt-44">
+    <div className="form-container px-[10%]  mt-44">
       <div>
         <h1>Let’s build your career with us</h1>
         <h3>
@@ -51,7 +51,7 @@ const FormPage = () => {
           ipsum dolor sit amet, consectetur adipiscing elit.
         </h3>
       </div>
-      <div className="  flex items-center justify-between w-full">
+      <div className=" ml-10 flex items-center justify-center space-x-24 w-full">
         <form onSubmit={handleSubmit} className="career-form h-[65vh]">
           <h2>Build your career with us</h2>
 

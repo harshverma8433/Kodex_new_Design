@@ -23,20 +23,7 @@ const LoginPage = () => {
     });
   };
 
-  // const fetchUser = async () => {
-  //   try {
-  //     const response = await axios.get("http://localhost:4444/get-user", {
-  //       withCredentials: true,
-  //     });
-  //     if (response.status === 200) {
-  //       setUser(response.data.data); // Set the user
-  //     } else {
-  //       setUser(null);
-  //     }
-  //   } catch (error) {
-  //     setUser(null);
-  //   }
-  // };
+
 
   const handleLogin = async (event) => {
     event.preventDefault();

@@ -1,7 +1,8 @@
 import "./BoxSection.css"
-const BoxSection = () => {
+const BoxSection = ({element}) => {
   return (
-    <div className='w-[90%] h-[6vh] rounded-full bg-box-col '>
+    <div className='w-[90%] h-[6vh] rounded-full text-black text-xl flex justify-center items-center tracking-wide bg-box-col '>
+      {element}
         
     </div>
   )
