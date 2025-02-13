@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import "./NavBar.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import axios from "axios";
@@ -11,7 +11,17 @@ const Navbar = ({ user, setUser }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const [openAccount, setopenAccount] = useState(false);
+  const [text, setText] = useState("Joint Venture");
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setText((prevText) =>
+        prevText === "Joint Venture" ? "Kodebumps" : "Joint Venture"
+      );
+    }, 3000); // Switch every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
   const handleLogout = async () => {
     try {
       const url = "http://localhost:4444/logout";
@@ -43,22 +53,19 @@ const Navbar = ({ user, setUser }) => {
         </Link>
       </div>
 
-      <div
-        className="flex items-center  space-x-3 "
-        id=""
-      >
+      <div className="flex items-center   space-x-3" id="">
         <div className="flex items-center   font-sans space-x-1 text-sm text-white">
           {/* Add active class conditionally */}
           <hr className="w-[1px] h-8 bg-white" />
           <Link
-              to="/"
-              className={`px-4 text-lg py-2 rounded-full ${
-                location.pathname === "/"
-                  ? "border-b-2 border-[#056777] hover:border-b-4 hover:border-[#3da9b9]  navbar-link-active"
-                  : "hover:border-b-4 hover:border-[#3da9b9] "
-              }`}
-            >
-              Home
+            to="/"
+            className={`px-4 text-lg py-2 rounded-full ${
+              location.pathname === "/"
+                ? "border-b-2 mx-2 border-[#056777] hover:border-b-4 hover:border-[#3da9b9]  navbar-link-active"
+                : "hover:border-b-4 mx-2 hover:border-[#3da9b9] "
+            }`}
+          >
+            Home
           </Link>
           <hr className="w-[1px] h-8 bg-white" />
 
@@ -109,7 +116,8 @@ const Navbar = ({ user, setUser }) => {
             Contact us
           </Link>
 
-          {user ? (
+<div>
+{user ? (
             <div className="relative">
               <MdAccountCircle
                 onClick={() => setopenAccount(!openAccount)}
@@ -132,37 +140,43 @@ const Navbar = ({ user, setUser }) => {
               )}
             </div>
           ) : (
-            <div className="relative flex pr-24">
-              <Link
-                to="/login"
-                className={`px-4 font-semibold text-lg py-2 pr-12 rounded-full ${
-                  location.pathname === "/login" ||
-                  location.pathname === "/login"
-                    ? "bg-col-5 navbar-link-active"
-                    : "bg-white text-black"
-                }`}
-              >
-                Log In
-              </Link>
+            // <div className="relative flex pr-24">
+            //   <Link
+            //     to="/login"
+            //     className={`px-4 font-semibold text-lg py-1 pr-12 rounded-full ${
+            //       location.pathname === "/login" ||
+            //       location.pathname === "/login"
+            //         ? "bg-col-5 navbar-link-active"
+            //         : "bg-white text-black"
+            //     }`}
+            //   >
+            //     Log In
+            //   </Link>
 
-              <Link
-                to="/signup"
-                className={`px-4 absolute right-[-50px] mr-24  top-0 bottom-0 text-lg py-5 flex items-center rounded-full ${
-                  location.pathname === "/sing-up" ||
-                  location.pathname === "/signup"
-                    ? "bg-col-5  navbar-link-active"
-                    : "bg-col-16"
-                }`}
-              >
-                Sign Up
-              </Link>
+            //   <Link
+            //     to="/signup"
+            //     className={`px-4 absolute right-[-50px] mr-24  top-0 bottom-0 text-lg py-1 flex items-center rounded-full ${
+            //       location.pathname === "/sing-up" ||
+            //       location.pathname === "/signup"
+            //         ? "bg-col-5  navbar-link-active"
+            //         : "bg-col-16 "
+            //     }`}
+            //   >
+            //     Sign Up
+            //   </Link>
+            // </div>
+
+            <div className="butt text-white rounded-full ">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span className="fade-in-out">{text}</span>
             </div>
           )}
+</div>
         </div>
-
       </div>
-
-      
     </nav>
   );
 };

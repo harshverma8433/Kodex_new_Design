@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import logo from "./21.png"
+
 const Footer = () => {
   return (
     <footer className="bg-[#181739] text-white pt-10 px-4">
@@ -63,11 +65,13 @@ const Footer = () => {
 
           {/* KVTech Section */}
           <div className="flex flex-col space-y-2 text-center sm:text-left">
-            <h3 className="font-bold text-xl">KVTech</h3>
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/trainings">Trainings</a>
-            <a href="/services">Services</a>
+            <h3 className="font-bold text-xl">KodeVortex</h3>
+            <Link to="/" onClick={() => window.scrollTo(0, 0)}>Home</Link>
+            <Link to="/training" onClick={() => window.scrollTo(0, 0)}>Trainings</Link>
+            <Link to="/internship" onClick={() => window.scrollTo(0, 0)}>Internship</Link>  
+            <Link to="/about-us" onClick={() => window.scrollTo(0, 0)}>About Us</Link>
+            <Link to="/contact-us" onClick={() => window.scrollTo(0, 0)}>Contact Us</Link>
+
           </div>
 
           {/* Services Section */}
@@ -96,7 +100,7 @@ const Footer = () => {
                 placeholder="Email Address"
                 className="py-2 px-4 pr-32 text-white bg-gray-800 border border-gray-700 rounded-full w-full"
               />
-              <button className="absolute right-0 top-0 bg-gray-600 py-2 px-4 rounded-r-full text-white font-bold">
+              <button className="absolute right-0 top-0 bg-[#056777] py-2 px-4 rounded-r-full text-white font-bold">
                 SUBMIT
               </button>
             </div>

@@ -20,7 +20,7 @@ function HeroPage() {
             </div>
           </div>
 
-       <div className="row mt-28 w-[90%] mx-auto  justify-content-center">
+       <div className="row mt-16 w-[90%] mx-auto  justify-content-center">
          <div className="col-12">
            <div className="horizontal-band mx-auto"></div>
          </div>

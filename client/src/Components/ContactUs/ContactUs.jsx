@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import "./ContactUs.css"
-import axios from "axios"
+// import axios from "axios"
+import { send } from '@emailjs/browser';
 import toast from 'react-hot-toast'
 const ContactUs = () => {
     const [formData, setFormData] = useState({
@@ -18,27 +19,57 @@ const ContactUs = () => {
         }))
       }
     
+      // const handleSubmit = async (e) => {
+      //   e.preventDefault()
+      //   try {
+      //     const response = await axios.post(
+      //       "http://localhost:4444/submit-contact-form",
+      //       formData
+      //     );
+      //     console.log("Response:", response.data);
+      //     toast.success(response.data.message);
+      //     setFormData({
+      //       fullName: "",
+      //       email: "",
+      //       phoneNumber: "",
+      //       message: "",
+      //     });
+      //   } catch (error) {
+      //     console.error("Error submitting form:", error);
+      //     alert("Failed to submit form");
+      //   }
+      // }
       const handleSubmit = async (e) => {
-        e.preventDefault()
+        e.preventDefault();
+    
+        const templateParams = {
+          from_name: formData.fullName,
+          from_email: formData.email,
+          phone_number: formData.phoneNumber,
+          message: formData.message,
+          to_emails : "hv77856@gmail.com , sn013293@gmail.com,vijay.singh@kodevortex.in"
+        };
+    
         try {
-          const response = await axios.post(
-            "http://localhost:4444/submit-contact-form",
-            formData
+          await send(
+            'service_7hbmjqn',    // Replace with your EmailJS service ID
+            'template_n9dedjp',   // Replace with your EmailJS template ID
+            templateParams,
+            'FQ2mG-WW5dDSPIj-1'     // Replace with your EmailJS public key
           );
-          console.log("Response:", response.data);
-          toast.success(response.data.message);
+          toast.success('Message sent successfully!');
           setFormData({
-            fullName: "",
-            email: "",
-            phoneNumber: "",
-            message: "",
+            fullName: '',
+            email: '',
+            phoneNumber: '',
+            message: '',
+
           });
         } catch (error) {
-          console.error("Error submitting form:", error);
-          alert("Failed to submit form");
+          console.error('Failed to send message:', error);
+          toast.error('Failed to send message. Please try again later.');
         }
-      }
-    
+      };
       return (
         <>
         <div className="contact-container mx-[20%] mb-16">

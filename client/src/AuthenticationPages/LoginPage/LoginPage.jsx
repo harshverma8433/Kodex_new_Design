@@ -115,7 +115,7 @@ const LoginPage = () => {
 
             <div className="w-[95%] text-end pt-10">
               <Link
-                to="/register"
+                to="/signup"
                 className="text-white hover:underline underline font-outfit text-[14px]  font-normal leading-[23.87px] text-left"
               >
                 Create an Account

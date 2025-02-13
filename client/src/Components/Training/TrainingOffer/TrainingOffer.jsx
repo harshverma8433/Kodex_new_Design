@@ -1,12 +1,12 @@
 import "./TrainingOffer.css";
 const TrainingOffer = () => {
   return (
-    <div className="mt-96 ">
+    <div className="mt-80 ">
       <p className="text-white pb-16 text-font text-2xl tracking-wider">
         Trainings we offer
       </p>
       <div className="flex space-x-10 h-[50%] justify-center ">
-        <div className="w-[30%] flex flex-col items-center rounded-3xl h-[50vh] bg-algo-col">
+        <div className="w-[40%] flex flex-col items-center rounded-3xl h-[60vh] bg-algo-col">
           <h1 className="text-xl pr-24 font-semibold py-10">ALGOCHARYA</h1>
           <div className="relative flex">
             {Array(4)
@@ -23,7 +23,7 @@ const TrainingOffer = () => {
               </div>
           </div>
         </div>
-        <div className="w-[30%] flex flex-col items-center rounded-3xl h-[50vh] bg-algo-col">
+        <div className="w-[40%] flex flex-col items-center rounded-3xl h-[60vh] bg-algo-col">
           <h1 className="text-xl pr-24 font-semibold py-10">LAKSHYARITHM</h1>
           <div className="relative flex">
             {Array(4)

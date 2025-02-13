@@ -30,6 +30,7 @@ import BrochureSection from "./Components/ServicesSection/BrochureSection/Brochu
 import AssociateInstitution from "./Components/AssociateInstitution/AssociateInstitution";
 import Certification from "./Components/Certification/Certification";
 import Navbar1 from "./Components/Navbar/NavBar1";
+import Section2 from "./pages/InternshipPage/Section2/Section2";
 const App = () => {
   const [user, setUser] = useState();
 
@@ -104,7 +105,7 @@ const App = () => {
             <Route path="/training" element={<TrainingPage />} />
             <Route path="/service" element={<ServicePage />} />
             <Route path="/member" element={<MainMemberPage />} />
-            <Route path="/internship" element={<InternshipPage />} />
+            <Route path="/internship" element={<><InternshipPage /> <Section2/> </> } />
             <Route path="/course" element={<CoursePage />} />
           </Route>
           <Route
